@@ -1,1 +1,25 @@
+apiVersion: v1
+kind: Pod
 
+
+metadata:
+  name: dev-pod1
+  namespace: app1
+  labels:
+    env: dev
+    app: app1
+
+spec:
+  containers:
+    - name: dev-pod1
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+          name: http
+      resources:
+        requests:
+          memory: "328Mi"
+          cpu: "550m"
+        limits:
+          memory: "556Mi"
+          cpu: "900m"
